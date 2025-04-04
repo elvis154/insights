@@ -1,0 +1,193 @@
+/* General reset for header */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'StalinistOne';
+  src: url('./fonts/Stalinist_One/StalinistOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./fonts/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #000000, #070c38); 
+  padding: 0 30px;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  perspective: 1000px; 
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-family: "StalinistOne", sans-serif;
+  color: #fef4f4;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.1s ease-in-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+  
+}
+
+/* Adding Hover Styles */
+.logo-text:hover {
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  color: #00a7f5;
+}
+/* Navigation Styling */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  list-style-type: none;
+  margin-left: 30px;
+}
+
+.nav-item {
+  font-family: "Orbitron",sans-serif;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #ff5151, #b88a44); 
+  background-clip: text; 
+  color: transparent;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: color 0.3s ease, transform 0.3s ease; 
+  position: relative;
+}
+
+/* Hover Effects for Navigation Items */
+.nav-item:hover {
+  color: #00f5e9; 
+  transform: scale(1.1); 
+}
+
+.nav-item:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00f5e9; 
+  transform: scaleX(0);
+  animation: underline-animation 0.3s forwards; 
+}
+
+/* Underline Animation */
+@keyframes underline-animation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo-text {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+
+  .nav-items {
+    margin-left: 0;
+  }
+
+  .nav-item {
+    font-size: 1rem;
+    margin-left: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .logo-text {
+    font-size: 2.5rem; 
+    margin-bottom: 10px;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+    font-size: 1rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    justify-content: center; 
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+
+  .nav-items {
+    flex-direction: row;
+    gap: 8px; 
+    width: 100%; 
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .nav-item {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    padding: 5px; 
+  }
+}

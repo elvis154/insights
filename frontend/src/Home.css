@@ -1,0 +1,326 @@
+@font-face {
+  font-family: 'StalinistOne';
+  src: url('./fonts/Stalinist_One/StalinistOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./fonts/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Protest';
+  src: url('./fonts/Protest_Strike/ProtestStrike-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Anton", sans-serif;
+  /*background: linear-gradient(90deg, #000000, #05092e);*/
+  
+  min-height: 100vh; 
+  max-width: 1000%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  flex-direction: column;
+}
+ /* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+/* Home Content Styles */
+.home-page {
+  position: absolute;  
+  z-index: 2;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;  
+  width: 100%;  
+  text-align: left;  
+  padding: 20px;  
+  box-sizing: border-box;  
+  top: 0;  
+  left: 0;  
+  flex-wrap: wrap;
+}
+
+.content {
+  color: white;
+  flex-wrap: wrap;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 3;  
+  max-width: 100%;  
+  text-align: left;
+  margin: 0 auto;  
+  padding: 30px;  
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: left; 
+  width: 100%;
+}
+.welcome-text {
+  
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  max-width: 60%;
+}
+
+.welcome-text h2 {
+  font-size: 3rem;
+  font-family: "Orbitron", sans-serif;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #ff5f5f, #7a9af9);
+  background-clip: text; 
+  color: transparent;
+  font-weight: normal;
+  
+}
+.welcome-text h1.highlight-text {
+  font-size: 5.5rem;
+  font-family: "StalinistOne", sans-serif;
+  color: linear-gradient(90deg, #ff5f5f, #717dff);
+  /*font-weight: bold;*/
+  letter-spacing: 2px;
+  text-transform: uppercase;
+ 
+}
+
+/*@keyframes glow {
+  40% {
+    -webkit-text-stroke: 1.5px #00ffff; 
+    text-shadow: 0 0 3px #00ffff, 0 0 6px #00ffff, 0 0 9px #00ffff; 
+  }
+  60% {
+    -webkit-text-stroke: 1.5px #00d4b5; 
+    text-shadow: 0 0 6px #00d4b5, 0 0 12px #00d4b5, 0 0 18px #00d4b5;
+  }
+}*/
+
+
+.welcome-text p {
+  font-size: 1.8rem;
+  font-family: "Protest", sans-serif;
+  font-style: italic;
+  line-height: 1.8;
+}
+/* Button Styles */
+.buttons {
+  display: flex;
+  gap: 25px;
+  margin-top: 40px;
+  justify-content: left;
+  z-index: 3; 
+  flex-direction: row; 
+  max-width: 100%;
+  align-items: center; 
+  flex-wrap: wrap; 
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid;
+  border-image-source: linear-gradient(90deg, #ff5f5f, #717dff);
+  border-image-slice: 1;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ffffff, #9ab6d1);
+  color: rgb(0, 0, 0);
+  border: 2px solid transparent;
+  border-radius: 15px;
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome-text {
+    max-width: 100%;
+    margin-bottom: 400px;
+  }
+
+  .welcome-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-text h1.highlight-text {
+    font-size: 4rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.4rem;
+  }
+
+  .buttons {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-text h2 {
+    font-size: 2rem;
+  }
+
+  .welcome-text h1.highlight-text {
+    font-size: 3rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+
+/* Additional Responsive Layouts */
+@media (max-width: 480px) {
+  /* For smaller smartphones */
+  .home-page {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome-text {
+    max-width: 90%;
+    margin-bottom: 260px;
+    margin-top: 150px;
+  }
+
+  .welcome-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-text h1.highlight-text {
+    font-size: 2.5rem;
+  }
+
+  .welcome-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .buttons {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  /* For extra small devices */
+  .welcome-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-text h1.highlight-text {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* For tablets or medium-sized devices */
+  .home-page {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .welcome-text {
+    max-width: 80%;
+  }
+
+  .welcome-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .welcome-text h1.highlight-text {
+    font-size: 3.5rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* For larger tablets or smaller laptops */
+  .welcome-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-text h1.highlight-text {
+    font-size: 4rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 12px 18px;
+  }
+}

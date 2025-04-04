@@ -1,0 +1,240 @@
+@font-face {
+  font-family: 'StalinistOne';
+  src: url('./fonts/Stalinist_One/StalinistOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./fonts/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* General Footer Styles */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 40px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 999;
+  transform: translateY(100%); 
+  transition: transform 0.5s ease-in-out; 
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Footer visible when scrolled to the bottom */
+.footer.scrolled {
+  transform: translateY(0); 
+}
+
+/* Footer container to hold all elements */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Footer logo link */
+.footer-logo-link {
+  font-family: "StalinistOne", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  animation: slideIn 0.8s ease-out;
+  margin-left: -4rem; 
+}
+
+
+.footer-logo-link:hover {
+  color: #00a7f5; 
+  transform: scale(1.1); 
+}
+
+/* Navigation section */
+.footer-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -55rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  /*flex-wrap: wrap;*/
+  justify-content: center; 
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-list li {
+  animation: fadeIn 1s ease-in both;
+  animation-delay: calc(0.2s * var(--i)); 
+}
+
+.footer-nav-link {
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(90deg, #ff5f5f, #b88a44); 
+  background-clip: text; 
+  color: transparent;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  flex-wrap: wrap;
+ 
+}
+
+.footer-nav-link:hover {
+  color: #d4dce0;
+  transform: translateY(-5px); 
+}
+
+.footer-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color:#00a7f5;;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.footer-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Footer info section */
+.footer-info {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  animation: fadeIn 1.5s ease-out;
+  margin-top:-1rem;
+  margin-right:-6.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-text {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.5;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  flex-wrap: wrap;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* General Responsiveness for Footer */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo-link {
+    margin-bottom: 15px;
+    align-items: center;
+    
+    margin-left: 0rem;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+  }
+
+  .footer-nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footer-nav-link {
+    font-size: 0.9rem;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 0rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    align-items: center;
+    padding: 10px;
+  }
+  .footer-logo-link {
+   
+    align-items: center;
+    
+  }
+
+  .footer-nav {
+    gap: 12px;
+  }
+  .footer-nav-list{
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+  }
+
+  .footer-nav-link {
+    font-size: 0.8rem;
+  }
+
+  .footer-info {
+    font-size: 0.9rem;
+  }
+}

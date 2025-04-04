@@ -1,0 +1,72 @@
+/* dashboard.css */
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .MuiButton-root {
+    text-transform: none;
+    font-weight: 600;
+  }
+  
+  /* Header Styles */
+  .MuiAppBar-root {
+    background-color: #1976d2;
+    box-shadow: none;
+  }
+  
+  /* Heading and Subheading Styles */
+  .heading {
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+  }
+  
+  .subheading {
+    color: #555;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Card Styles */
+  .card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .MuiCardContent-root {
+    padding: 20px;
+  }
+  
+  .MuiTypography-h5 {
+    font-weight: 500;
+  }
+  
+  /* Button Styles */
+  .MuiButton-containedPrimary {
+    background-color: #1976d2;
+    font-weight: bold;
+  }
+  
+  .MuiButton-root {
+    box-shadow: none;
+  }
+  
+  /* Responsive Grid */
+  @media (max-width: 600px) {
+    .MuiGrid-item {
+      margin-bottom: 20px;
+    }
+  }
+  
