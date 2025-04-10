@@ -45,7 +45,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo" ref={logoRef}>
-        <span className="logo-text">AI RETAIN-X</span>
+        <span className="logo-text">InsiGhtX</span>
       </div>
       <nav className="nav">
         <ul className="nav-items">

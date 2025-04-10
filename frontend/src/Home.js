@@ -23,7 +23,7 @@ const HomePage = () => {
       <div className="content">
         <div className="welcome-text">
           <h2>Welcome to</h2>
-          <h1 className="highlight-text">RETAIN-X</h1>
+          <h1 className="highlight-text">InsiGhtX</h1>
           <p>Our AI-powered solution predicts, prevents, and personalizes 
           customer retention—automatically!</p>
         </div>
